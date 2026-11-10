@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#172b2b">
+<title>I'm Sorry</title>
+<style>
+:root{--bg:#142727;--bg2:#1b3734;--cream:#fff8ed;--muted:#c4d4cc;--mint:#a8d8c4;--coral:#ffb49a;--gold:#f5d59a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;overflow-x:hidden;color:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 50% 0%,#3c6253 0%,transparent 42%),linear-gradient(150deg,#102322,#1b3430 58%,#263c32)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E")}
+.scene{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(2px);opacity:.18;animation:drift 13s ease-in-out infinite alternate}
+.orb.a{width:280px;height:280px;background:#f5b99a;left:-100px;top:25%}.orb.b{width:360px;height:360px;background:#8ccbb1;right:-150px;top:8%;animation-delay:-5s}
+@keyframes drift{to{transform:translate(45px,-35px) scale(1.12)}}
+.petal{position:absolute;top:-10%;width:13px;height:21px;border-radius:100% 0 100% 0;background:linear-gradient(145deg,#f7c8a8,#d58e78);opacity:0;animation:fall linear infinite}
+.petal:nth-child(1){left:8%;animation-duration:13s;animation-delay:1s}.petal:nth-child(2){left:22%;animation-duration:17s;animation-delay:5s;transform:scale(.7)}.petal:nth-child(3){left:74%;animation-duration:15s;animation-delay:2s}.petal:nth-child(4){left:89%;animation-duration:19s;animation-delay:7s;transform:scale(.6)}.petal:nth-child(5){left:48%;animation-duration:16s;animation-delay:4s}
+@keyframes fall{0%{opacity:0;translate:0 -5vh;rotate:0}10%{opacity:.65}90%{opacity:.45}100%{opacity:0;translate:70px 115vh;rotate:300deg}}
+main{position:relative;width:min(900px,calc(100% - 34px));margin:auto;padding:28px 0 35px}
+nav{display:flex;justify-content:space-between;align-items:center;color:#c5d5cb;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.brand{display:flex;align-items:center;gap:9px}.brand-mark{width:27px;height:27px;border:1px solid #d5b69a88;border-radius:50%;display:grid;place-items:center;color:var(--coral);font-size:14px}
+.hero{min-height:550px;display:grid;place-items:center;text-align:center;padding:58px 0 40px;position:relative}
+.hero-inner{max-width:650px;position:relative;z-index:1}
+.kicker{display:inline-flex;align-items:center;gap:8px;color:#f1d2b2;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.kicker:before,.kicker:after{content:"";height:1px;width:30px;background:#f1d2b288}
+h1{font-size:clamp(64px,12vw,112px);line-height:.88;letter-spacing:-.085em;margin:27px 0 22px;font-weight:850}
+h1 span{display:block;color:var(--coral);font-family:Georgia,serif;font-weight:500;font-style:italic;letter-spacing:-.07em}
+.lead{font-size:16px;line-height:1.8;color:#d1ddd5;max-width:420px;margin:auto}
+.scroll{display:inline-flex;align-items:center;gap:9px;margin-top:32px;color:#f2d3b8;text-decoration:none;font-size:12px;letter-spacing:.07em}
+.scroll i{font-style:normal;animation:bob 1.5s infinite}@keyframes bob{50%{transform:translateY(5px)}}
+.art{width:min(250px,65vw);aspect-ratio:1;margin:0 auto 27px;position:relative;display:grid;place-items:center}
+.ring{position:absolute;inset:8%;border:1px solid #e9c6a866;border-radius:50%;animation:spin 24s linear infinite}
+.ring:before,.ring:after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--coral);box-shadow:0 0 20px #ffb49a;top:13%;left:18%}
+.ring:after{top:auto;left:auto;right:10%;bottom:20%;width:6px;height:6px;background:var(--mint);box-shadow:0 0 18px var(--mint)}
+.ring.inner{inset:22%;border-style:dashed;opacity:.5;animation-direction:reverse;animation-duration:35s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.envelope{width:112px;height:82px;position:relative;background:linear-gradient(145deg,#e8b99b,#ca927a);border-radius:9px;box-shadow:0 18px 50px #070f0d77;transform:rotate(-7deg);animation:float 4s ease-in-out infinite}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,#f4d5b7,#d8a58a);clip-path:polygon(0 0,50% 58%,100% 0);border-radius:9px 9px 0 0}
+.envelope:after{content:"";position:absolute;inset:0;background:linear-gradient(35deg,#d39c80,#f0c9a7);clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);border-radius:0 0 9px 9px}
+.seal{position:absolute;z-index:2;width:27px;height:27px;border-radius:50%;background:#31584b;left:50%;top:53%;transform:translate(-50%,-50%);display:grid;place-items:center;color:#f8d5b9;font-size:15px;box-shadow:0 3px 9px #0004}
+@keyframes float{50%{transform:translateY(-12px) rotate(-3deg)}}
+.content{padding:10px 0 0}
+.section-title{text-align:center;margin:15px 0 24px}.section-title small{color:#e5bda2;letter-spacing:.2em;text-transform:uppercase;font-size:10px}.section-title h2{font-size:clamp(27px,5vw,38px);letter-spacing:-.055em;margin:9px 0 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{position:relative;min-height:190px;padding:23px 21px;border:1px solid #d7e5d522;border-radius:20px;background:linear-gradient(145deg,#ffffff12,#ffffff06);overflow:hidden;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);border-color:#f4c4a477}
+.card:after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:#f1b99a12;right:-45px;bottom:-55px}
+.num{font-size:11px;color:var(--coral);letter-spacing:.13em}.icon{font-size:25px;margin:16px 0 11px;display:block;filter:drop-shadow(0 5px 12px #0004)}
+.card h3{font-size:16px;margin:0 0 7px}.card p{font-size:13px;line-height:1.65;color:#c4d4cc;margin:0}
+.note-band{margin:18px 0 0;padding:22px 25px;border-radius:18px;background:linear-gradient(100deg,#e5b89b1c,#9ccfba18);border:1px solid #e3c2a52b;display:flex;align-items:center;gap:17px}
+.note-band .star{font-size:26px;color:var(--gold)}.note-band strong{display:block;font-size:14px;margin-bottom:4px}.note-band p{margin:0;color:#c5d5cc;font-size:13px;line-height:1.6}
+.final{position:relative;text-align:center;margin:60px auto 0;padding:44px 20px 36px;max-width:660px}
+.final:before{content:"";position:absolute;inset:0;border:1px solid #e9c6a844;border-radius:50% 50% 22px 22px/20% 20% 22px 22px;background:linear-gradient(180deg,#f5c8a50d,transparent);pointer-events:none}
+.final>*{position:relative}.final .tiny{font-size:25px;color:var(--coral)}.final h2{font:italic clamp(34px,7vw,55px)/1.05 Georgia,serif;margin:12px 0;color:#ffd0b4}.final p{max-width:420px;margin:auto;color:#cbd8d0;font-size:14px;line-height:1.8}
+button{margin-top:22px;padding:13px 21px;border:1px solid #f3c3a977;border-radius:999px;background:#e9b99a;color:#263b33;font-size:12px;font-weight:800;letter-spacing:.04em;cursor:pointer;transition:.25s}
+button:hover{transform:translateY(-3px);box-shadow:0 10px 25px #e9b99a33}
+#reply{min-height:22px;margin-top:14px;font-size:12px;color:#f2c7ac}
+footer{text-align:center;color:#829a8d;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:30px 0 0}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:680px){.hero{min-height:500px;padding-top:40px}.cards{grid-template-columns:1fr}.card{min-height:0;padding:20px}.icon{margin:10px 0}.note-band{align-items:flex-start}.final{margin-top:42px;padding:35px 17px}.final:before{border-radius:28px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="scene" aria-hidden="true"><div class="orb a"></div><div class="orb b"></div><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i></div>
+<main>
+<nav><div class="brand"><span class="brand-mark">✳</span> A small note</div><span>From me, sincerely</span></nav>
+<header class="hero">
+<div class="hero-inner">
+<div class="art" aria-hidden="true"><div class="ring"></div><div class="ring inner"></div><div class="envelope"><div class="seal">♡</div></div></div>
+<div class="kicker">A message I mean</div>
+<h1>I'm <span>sorry.</span></h1>
+<p class="lead">I made a mistake, and I wish I could take it back.<br>This is me saying I'm genuinely sorry.</p>
+<a class="scroll" href="#words">A few words from me <i>↓</i></a>
+</div>
+</header>
+
+<section class="content" id="words">
+<div class="section-title reveal"><small>Just a few things</small><h2>I want you to know</h2></div>
+<div class="cards">
+<article class="card reveal"><div class="num">01 / HONESTLY</div><span class="icon">🫧</span><h3>I know I was wrong.</h3><p>I understand that my mistake may have hurt you. I am truly sorry.</p></article>
+<article class="card reveal"><div class="num">02 / NO EXCUSES</div><span class="icon">🤍</span><h3>I take responsibility.</h3><p>I won't try to justify it. I should have handled things better.</p></article>
+<article class="card reveal"><div class="num">03 / FROM NOW ON</div><span class="icon">🌱</span><h3>I'll do better.</h3><p>I'll learn from this and be more thoughtful with my actions.</p></article>
+</div>
+<div class="note-band reveal"><span class="star">✧</span><div><strong>I know “sorry” doesn't undo it.</strong><p>But I hope you can see that I mean it. I won't rush you to accept it.</p></div></div>
+</section>
+
+<section class="final reveal">
+<div class="tiny">♡</div>
+<h2>I'm truly sorry.</h2>
+<p>No excuses. No expectations. Just a genuine apology for the mistake I made.</p>
+<button type="button" onclick="document.getElementById('reply').textContent='I mean every word. Take all the time you need. ♡'">One last thing</button>
+<div id="reply" aria-live="polite"></div>
+</section>
+<footer>Made with sincerity ·  just an apology</footer>
+</main>
+<script>
+const items=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}}),{threshold:.12});
+ items.forEach(item=>observer.observe(item));
+}else{items.forEach(item=>item.classList.add('show'))}
+</script>
+</body>
+</html>
